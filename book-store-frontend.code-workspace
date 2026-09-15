@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "book-store-frontend"
+		},
+		{
+			"path": "book-store-backend"
+		}
+	],
+	"settings": {}
+}

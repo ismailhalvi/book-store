@@ -1,0 +1,19 @@
+.books {
+    display: flex;
+    justify-content: center
+    ;
+    
+}
+.section-color{  
+    [data-bs-theme="dark"] .section-color {
+        background-image: url("../../assets/images/smooth-green-concrete-wall-background.jpg") !important;
+        background-size: cover !important ;
+
+    }
+    [data-bs-theme="light"] .section-color {
+        background-image: url("../../assets/images/herobg.jpg") !important;
+        background-size: cover !important ;
+
+    }
+
+}

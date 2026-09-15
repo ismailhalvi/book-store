@@ -1,0 +1,125 @@
+.img-auth {
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.img-auth img {
+    height: 150px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.author {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.author:hover {
+    transform: translateY(-6px);
+}
+
+.author:hover img {
+    transform: scale(1.05);
+}
+
+
+/* تفاصيل الكاتب */
+
+.details {
+    padding: 15px 10px 12px;
+    text-align: center;
+    position: relative;
+}
+
+
+/* الوضع النهاري */
+
+[data-bs-theme="light"] .details {
+    background-color: #fff;
+    color: #222;
+}
+
+
+/* الوضع الليلي */
+
+[data-bs-theme="dark"] .details {
+    background-color: #1b2025;
+    color: #fff;
+}
+
+
+/* اسم الكاتب */
+
+.details .auth-h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 9px;
+    position: relative;
+}
+
+
+/* الخط تحت الاسم */
+
+.details .auth-h3::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: #B68644;
+    margin: 8px auto 0;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.author:hover .auth-h3::after {
+    width: 70px;
+}
+
+
+/* وصف الكاتب */
+
+.details .auth-p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 8px 0 12px;
+    color: #888;
+}
+
+
+/* الأيقونات */
+
+.icons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(182, 134, 68, 0.2);
+}
+
+
+/* الأيقونات نفسها */
+
+.icons span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.icons span:hover {
+    color: #B68644;
+    transform: translateY(-2px);
+}
+
+
+/* الرابط */
+
+.author a {
+    text-decoration: none;
+    color: inherit;
+}

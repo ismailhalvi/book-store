@@ -1,0 +1,7 @@
+.authors{
+    background-color: #ffffff ;
+}
+
+[    data-bs-theme="dark"] .authors {
+    background-color: #15191d    !important;
+}

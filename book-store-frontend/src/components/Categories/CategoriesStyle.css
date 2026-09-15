@@ -1,0 +1,25 @@
+.h2-categories{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.h2-categories::before,
+.h2-categories::after {
+    content: "";
+    flex: 1;
+    max-width: 100px;
+    height: 3px;
+    background-color: #c9a227;
+
+}
+ .categories-section {
+    background-color: #ffffff ;
+ }
+[data-bs-theme="dark"] .categories-section {
+    background-color: #15191d    !important;
+}

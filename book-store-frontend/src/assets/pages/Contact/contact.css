@@ -1,0 +1,382 @@
+.contact-page {
+    padding-top: 55px;
+    padding-bottom: 70px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.contact-intro > span {
+    color: #B68644;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-intro h2 {
+    color: var(--bs-body-color);
+    font-size: 36px;
+    font-weight: 800;
+    margin: 8px 0 10px;
+}
+
+.contact-intro h2 strong {
+    color: #B68644;
+}
+
+.contact-intro p {
+    color: #888;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info {
+    height: 100%;
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(182, 134, 68, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(145deg, #1c2329, #13181d);
+
+    border: 1px solid rgba(182, 134, 68, 0.25);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.contact-info-text {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+
+/* Contact Items */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item > div {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(182, 134, 68, 0.12);
+    border: 1px solid rgba(182, 134, 68, 0.25);
+
+    color: #B68644;
+    font-size: 18px;
+}
+
+.contact-item section span {
+    color: #888;
+    font-size: 12px;
+}
+
+.contact-item section p {
+    color: #ddd;
+    font-size: 14px;
+    margin: 3px 0 0;
+}
+
+
+/* Social */
+
+.contact-social {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 25px;
+    padding-top: 22px;
+}
+
+.contact-social > span {
+    color: #999;
+    font-size: 13px;
+}
+
+.contact-social > div {
+    display: flex;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.contact-social a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #aaa;
+    border: 1px solid rgba(182, 134, 68, 0.3);
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.contact-social a:hover {
+    color: white;
+    background: #B68644;
+    border-color: #B68644;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+    height: 100%;
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background: var(--bs-body-bg);
+
+    border: 1px solid rgba(182, 134, 68, 0.2);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.contact-form-title > svg {
+    color: #B68644;
+    font-size: 28px;
+}
+
+.contact-form-title h3 {
+    color: var(--bs-body-color);
+    font-size: 23px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.contact-form-title p {
+    color: #888;
+    font-size: 13px;
+    margin: 4px 0 0;
+}
+
+
+/* Inputs */
+
+.contact-form label {
+    display: block;
+    color: var(--bs-body-color);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    border: 1px solid rgba(182, 134, 68, 0.2);
+    border-radius: 9px;
+
+    background: rgba(128, 128, 128, 0.06);
+
+    color: var(--bs-body-color);
+
+    padding: 11px 13px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+.contact-form input {
+    height: 45px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #B68644;
+    box-shadow: 0 0 0 3px rgba(182, 134, 68, 0.1);
+}
+
+
+/* Button */
+
+.contact-form button {
+    width: 100%;
+    height: 46px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #B68644;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #9f7438;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(182, 134, 68, 0.2);
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.contact-bottom {
+    margin-top: 45px;
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(182, 134, 68, 0.14),
+            rgba(182, 134, 68, 0.03)
+        );
+
+    border: 1px solid rgba(182, 134, 68, 0.25);
+}
+
+.contact-bottom h2 {
+    color: #B68644;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.contact-bottom p {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+[data-bs-theme="light"] .contact-info {
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(182, 134, 68, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(145deg, #fffaf2, #ffffff);
+}
+
+[data-bs-theme="light"] .contact-info h3 {
+    color: #222;
+}
+
+[data-bs-theme="light"] .contact-item section p {
+    color: #444;
+}
+
+[data-bs-theme="light"] .contact-form {
+    background: #fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .contact-page {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .contact-intro {
+        margin-bottom: 30px;
+    }
+
+    .contact-intro h2 {
+        font-size: 29px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .contact-bottom {
+        margin-top: 30px;
+    }
+
+}

@@ -1,0 +1,39 @@
+.scroll-top {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #B68644;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    background-color: #9f7438;
+}
+
+[data-bs-theme="dark"] .scroll-top {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+[data-bs-theme="light"] .scroll-top {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
