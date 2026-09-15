@@ -11,11 +11,7 @@ import {
   removeFromWishlist,
 } from "../../../store/cartSlice";
 
-import {
-  FaUser,
-  FaHeart,
-  FaShoppingCart,
-} from "react-icons/fa";
+import { FaUser, FaHeart, FaShoppingCart } from "react-icons/fa";
 
 import api from "../../../api";
 import "./NavbarStyle.css";
@@ -31,19 +27,13 @@ function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { cartItems, wishlistItems } = useSelector(
-    (state) => state.cart
-  );
+  const { cartItems, wishlistItems } = useSelector((state) => state.cart);
 
-  const cartCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const cartTotal = cartItems.reduce(
-    (total, item) =>
-      total + Number(item.price || 0) * item.quantity,
-    0
+    (total, item) => total + Number(item.price || 0) * item.quantity,
+    0,
   );
 
   const wishlistCount = wishlistItems.length;
@@ -82,21 +72,15 @@ function Navbar() {
       console.log("LOGIN RESPONSE:", response.data);
 
       localStorage.setItem("jwt", response.data.jwt);
-      localStorage.setItem(
-        "user",
-        JSON.stringify(response.data.user)
-      );
+      localStorage.setItem("user", JSON.stringify(response.data.user));
 
       setMessage("تم تسجيل الدخول بنجاح ✅");
     } catch (error) {
-      console.log(
-        "LOGIN ERROR:",
-        error.response?.data
-      );
+      console.log("LOGIN ERROR:", error.response?.data);
 
       setMessage(
         error.response?.data?.error?.message ||
-          "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+          "البريد الإلكتروني أو كلمة المرور غير صحيحة",
       );
     } finally {
       setIsLoading(false);
@@ -108,16 +92,14 @@ function Navbar() {
       <div className="navbar-style shadow-sm">
         <nav className="navbar navbar-expand-lg">
           <div className="container">
-
             {/* Logo */}
             <a className="navbar-brand" href="/">
               <img
                 width="50px"
-                src="./public/logo.png"
+                src={`${import.meta.env.BASE_URL}Logo.png`}
                 alt="Logo"
               />
             </a>
-
             {/* Mobile */}
             <button
               className="navbar-toggler"
@@ -135,19 +117,12 @@ function Navbar() {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-
               {/* Links */}
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {navLinks.map((link) => {
                   return (
-                    <li
-                      key={link.id}
-                      className="nav-item"
-                    >
-                      <Link
-                        className="nav-link"
-                        to={link.link}
-                      >
+                    <li key={link.id} className="nav-item">
+                      <Link className="nav-link" to={link.link}>
                         {link.title}
                       </Link>
                     </li>
@@ -163,15 +138,12 @@ function Navbar() {
                   placeholder="البحث عن كتاب..."
                   aria-label="Search"
                   value={query}
-                  onChange={(e) =>
-                    setQuery(e.target.value)
-                  }
+                  onChange={(e) => setQuery(e.target.value)}
                 />
               </form>
 
               {/* Navbar Actions */}
               <div className="navbar-actions">
-
                 {/* Login */}
                 <button
                   type="button"
@@ -196,9 +168,7 @@ function Navbar() {
                   <FaHeart />
 
                   {wishlistCount > 0 && (
-                    <span className="navbar-badge">
-                      {wishlistCount}
-                    </span>
+                    <span className="navbar-badge">{wishlistCount}</span>
                   )}
                 </button>
 
@@ -214,12 +184,9 @@ function Navbar() {
                   <FaShoppingCart />
 
                   {cartCount > 0 && (
-                    <span className="navbar-badge">
-                      {cartCount}
-                    </span>
+                    <span className="navbar-badge">{cartCount}</span>
                   )}
                 </button>
-
               </div>
             </div>
           </div>
@@ -234,10 +201,7 @@ function Navbar() {
         aria-labelledby="loginOffcanvasLabel"
       >
         <div className="offcanvas-header login-offcanvas-header">
-          <h5
-            className="offcanvas-title"
-            id="loginOffcanvasLabel"
-          >
+          <h5 className="offcanvas-title" id="loginOffcanvasLabel">
             تسجيل الدخول
           </h5>
 
@@ -260,14 +224,9 @@ function Navbar() {
             سجّل الدخول للوصول إلى حسابك ومتابعة مشترياتك بسهولة.
           </p>
 
-          <form
-            className="login-form"
-            onSubmit={handleLogin}
-          >
+          <form className="login-form" onSubmit={handleLogin}>
             <div className="login-field">
-              <label htmlFor="loginEmail">
-                البريد الإلكتروني
-              </label>
+              <label htmlFor="loginEmail">البريد الإلكتروني</label>
 
               <input
                 id="loginEmail"
@@ -275,16 +234,12 @@ function Navbar() {
                 className="form-control"
                 placeholder="example@email.com"
                 value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
             <div className="login-field">
-              <label htmlFor="loginPassword">
-                كلمة المرور
-              </label>
+              <label htmlFor="loginPassword">كلمة المرور</label>
 
               <input
                 id="loginPassword"
@@ -292,9 +247,7 @@ function Navbar() {
                 className="form-control"
                 placeholder="أدخل كلمة المرور"
                 value={password}
-                onChange={(e) =>
-                  setPassword(e.target.value)
-                }
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
@@ -304,10 +257,7 @@ function Navbar() {
                 <span>تذكرني</span>
               </label>
 
-              <button
-                type="button"
-                className="login-forgot-btn"
-              >
+              <button type="button" className="login-forgot-btn">
                 نسيت كلمة المرور؟
               </button>
             </div>
@@ -317,17 +267,11 @@ function Navbar() {
               className="login-submit-btn"
               disabled={isLoading}
             >
-              {isLoading
-                ? "جاري تسجيل الدخول..."
-                : "تسجيل الدخول"}
+              {isLoading ? "جاري تسجيل الدخول..." : "تسجيل الدخول"}
             </button>
           </form>
 
-          {message && (
-            <p className="login-message">
-              {message}
-            </p>
-          )}
+          {message && <p className="login-message">{message}</p>}
 
           <div className="login-divider">
             <span>أو</span>
@@ -336,10 +280,7 @@ function Navbar() {
           <div className="login-register">
             <p>ليس لديك حساب؟</p>
 
-            <button
-              type="button"
-              className="login-register-btn"
-            >
+            <button type="button" className="login-register-btn">
               إنشاء حساب
             </button>
           </div>
@@ -354,10 +295,7 @@ function Navbar() {
         aria-labelledby="wishlistOffcanvasLabel"
       >
         <div className="offcanvas-header">
-          <h5
-            className="offcanvas-title"
-            id="wishlistOffcanvasLabel"
-          >
+          <h5 className="offcanvas-title" id="wishlistOffcanvasLabel">
             المفضلة ❤️
           </h5>
 
@@ -374,9 +312,7 @@ function Navbar() {
             <div className="empty-wishlist">
               <FaHeart />
               <p>المفضلة فارغة حالياً</p>
-              <span>
-                أضف الكتب التي تعجبك لتظهر هنا.
-              </span>
+              <span>أضف الكتب التي تعجبك لتظهر هنا.</span>
             </div>
           ) : (
             <>
@@ -385,10 +321,7 @@ function Navbar() {
                   const itemImage = `http://localhost:1337${item.image?.url}`;
 
                   return (
-                    <div
-                      className="wishlist-item"
-                      key={item.id}
-                    >
+                    <div className="wishlist-item" key={item.id}>
                       <img
                         className="wishlist-item-img"
                         src={itemImage}
@@ -412,11 +345,7 @@ function Navbar() {
                       <button
                         type="button"
                         className="wishlist-item-remove"
-                        onClick={() =>
-                          dispatch(
-                            removeFromWishlist(item.id)
-                          )
-                        }
+                        onClick={() => dispatch(removeFromWishlist(item.id))}
                         aria-label="إزالة الكتاب من المفضلة"
                       >
                         ×
@@ -438,10 +367,7 @@ function Navbar() {
         aria-labelledby="cartOffcanvasLabel"
       >
         <div className="offcanvas-header">
-          <h5
-            className="offcanvas-title"
-            id="cartOffcanvasLabel"
-          >
+          <h5 className="offcanvas-title" id="cartOffcanvasLabel">
             سلة المشتريات 🛒
           </h5>
 
@@ -458,9 +384,7 @@ function Navbar() {
             <div className="empty-cart">
               <FaShoppingCart />
               <p>السلة فارغة حالياً</p>
-              <span>
-                أضف بعض الكتب لتظهر هنا.
-              </span>
+              <span>أضف بعض الكتب لتظهر هنا.</span>
             </div>
           ) : (
             <>
@@ -469,10 +393,7 @@ function Navbar() {
                   const itemImage = `http://localhost:1337${item.image?.url}`;
 
                   return (
-                    <div
-                      className="cart-item"
-                      key={item.id}
-                    >
+                    <div className="cart-item" key={item.id}>
                       <img
                         className="cart-item-img"
                         src={itemImage}
@@ -487,11 +408,7 @@ function Navbar() {
                         <div className="cart-item-controls">
                           <button
                             type="button"
-                            onClick={() =>
-                              dispatch(
-                                decreaseQuantity(item.id)
-                              )
-                            }
+                            onClick={() => dispatch(decreaseQuantity(item.id))}
                           >
                             -
                           </button>
@@ -500,11 +417,7 @@ function Navbar() {
 
                           <button
                             type="button"
-                            onClick={() =>
-                              dispatch(
-                                increaseQuantity(item.id)
-                              )
-                            }
+                            onClick={() => dispatch(increaseQuantity(item.id))}
                           >
                             +
                           </button>
@@ -514,11 +427,7 @@ function Navbar() {
                       <button
                         type="button"
                         className="cart-item-remove"
-                        onClick={() =>
-                          dispatch(
-                            removeFromCart(item.id)
-                          )
-                        }
+                        onClick={() => dispatch(removeFromCart(item.id))}
                         aria-label="حذف الكتاب"
                       >
                         ×
@@ -534,10 +443,7 @@ function Navbar() {
                   <strong>{cartTotal} ريال</strong>
                 </div>
 
-                <Link
-                  to="/cart"
-                  className="btn btn-primary w-100"
-                >
+                <Link to="/cart" className="btn btn-primary w-100">
                   عرض السلة كاملة
                 </Link>
               </div>
