@@ -14,14 +14,11 @@ import "./CartStyle.css";
 function Cart() {
   const dispatch = useDispatch();
 
-  const { cartItems } = useSelector(
-    (state) => state.cart
-  );
+  const { cartItems } = useSelector((state) => state.cart);
 
   const cartTotal = cartItems.reduce(
-    (total, item) =>
-      total + Number(item.price || 0) * item.quantity,
-    0
+    (total, item) => total + Number(item.price || 0) * item.quantity,
+    0,
   );
 
   return (
@@ -37,31 +34,22 @@ function Cart() {
 
           <h4>السلة فارغة حالياً</h4>
 
-          <p>
-            لم تقم بإضافة أي كتب إلى السلة بعد.
-          </p>
+          <p>لم تقم بإضافة أي كتب إلى السلة بعد.</p>
 
-          <Link
-            to="/"
-            className="btn btn-primary"
-          >
+          <Link to="/" className="btn btn-primary">
             متابعة التسوق
           </Link>
         </div>
       ) : (
         <div className="row g-4">
-
           {/* Cart Items */}
           <div className="col-lg-8">
             <div className="cart-page-items">
               {cartItems.map((item) => {
-                const itemImage = `http://localhost:1337${item.image?.url}`;
+                const itemImage = `http://https://book-store-bkc3.onrender.com${item.image?.url}`;
 
                 return (
-                  <div
-                    className="cart-page-item"
-                    key={item.id}
-                  >
+                  <div className="cart-page-item" key={item.id}>
                     <img
                       className="cart-page-item-img"
                       src={itemImage}
@@ -71,18 +59,12 @@ function Cart() {
                     <div className="cart-page-item-info">
                       <h5>{item.name}</h5>
 
-                      <p className="cart-page-item-price">
-                        {item.price} ريال
-                      </p>
+                      <p className="cart-page-item-price">{item.price} ريال</p>
 
                       <div className="cart-page-item-controls">
                         <button
                           type="button"
-                          onClick={() =>
-                            dispatch(
-                              decreaseQuantity(item.id)
-                            )
-                          }
+                          onClick={() => dispatch(decreaseQuantity(item.id))}
                         >
                           -
                         </button>
@@ -91,11 +73,7 @@ function Cart() {
 
                         <button
                           type="button"
-                          onClick={() =>
-                            dispatch(
-                              increaseQuantity(item.id)
-                            )
-                          }
+                          onClick={() => dispatch(increaseQuantity(item.id))}
                         >
                           +
                         </button>
@@ -104,19 +82,13 @@ function Cart() {
 
                     <div className="cart-page-item-total">
                       <strong>
-                        {Number(item.price || 0) *
-                          item.quantity}{" "}
-                        ريال
+                        {Number(item.price || 0) * item.quantity} ريال
                       </strong>
 
                       <button
                         type="button"
                         className="cart-page-remove-btn"
-                        onClick={() =>
-                          dispatch(
-                            removeFromCart(item.id)
-                          )
-                        }
+                        onClick={() => dispatch(removeFromCart(item.id))}
                         aria-label="حذف الكتاب من السلة"
                       >
                         <FaTrash />
@@ -150,22 +122,15 @@ function Cart() {
                 <strong>{cartTotal} ريال</strong>
               </div>
 
-              <button
-                type="button"
-                className="btn btn-success w-100 mt-4"
-              >
+              <button type="button" className="btn btn-success w-100 mt-4">
                 إتمام الطلب
               </button>
 
-              <Link
-                to="/"
-                className="btn btn-outline-secondary w-100 mt-2"
-              >
+              <Link to="/" className="btn btn-outline-secondary w-100 mt-2">
                 متابعة التسوق
               </Link>
             </div>
           </div>
-
         </div>
       )}
     </div>

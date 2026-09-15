@@ -35,7 +35,6 @@ function QuickViewModal() {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="modal-content quick-modal-content">
-
             <div className="modal-header quick-modal-header">
               <h4 className="modal-title">{selectedBook.name}</h4>
 
@@ -47,16 +46,14 @@ function QuickViewModal() {
             </div>
 
             <div className="modal-body quick-modal-body">
-
               <div className="quick-image">
                 <img
-                  src={`http://localhost:1337${selectedBook?.image?.url}`}
+                  src={`http://https://book-store-bkc3.onrender.com${selectedBook?.image?.url}`}
                   alt={selectedBook.name}
                 />
               </div>
 
               <div className="quick-info">
-
                 <span className="quick-category">
                   {selectedBook.categories?.[0]?.name}
                 </span>
@@ -68,19 +65,12 @@ function QuickViewModal() {
 
                 <h2>{selectedBook.name}</h2>
 
-                <p className="quick-author">
-                  ✍️ {selectedBook.author?.name}
-                </p>
+                <p className="quick-author">✍️ {selectedBook.author?.name}</p>
 
-                <p className="quick-description">
-                  {selectedBook.description}
-                </p>
+                <p className="quick-description">{selectedBook.description}</p>
 
                 <div className="quick-bottom">
-
-                  <span className="quick-price">
-                    {selectedBook.price} ريال
-                  </span>
+                  <span className="quick-price">{selectedBook.price} ريال</span>
 
                   <span
                     className={
@@ -91,11 +81,9 @@ function QuickViewModal() {
                   >
                     {selectedBook.available ? "متوفر" : "غير متوفر"}
                   </span>
-
                 </div>
 
                 <div className="quick-actions">
-
                   <Link
                     to={`/book/${selectedBook.documentId}`}
                     className="quick-details-btn"
@@ -112,13 +100,9 @@ function QuickViewModal() {
                   <button className="quick-icon-btn">
                     <FaCartPlus />
                   </button>
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
         </div>
       </div>

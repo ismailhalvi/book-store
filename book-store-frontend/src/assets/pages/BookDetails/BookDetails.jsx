@@ -70,7 +70,7 @@ function BookDetails() {
           <div className="book-img col">
             <img
               className="img-book"
-              src={`http://localhost:1337${book.image.url}`}
+              src={`http://https://book-store-bkc3.onrender.com${book.image.url}`}
               alt={book.name}
             />
             <div className="book-gallery d-flex gap-2 mt-3 ">
@@ -78,7 +78,7 @@ function BookDetails() {
                 <img
                   className="img-book-2"
                   key={image.id}
-                  src={`http://localhost:1337${image.url}`}
+                  src={`http://https://book-store-bkc3.onrender.com${image.url}`}
                   alt={book.name}
                 />
               ))}
@@ -123,14 +123,10 @@ function BookDetails() {
           <div className="container">
             <h2>كتب ذات صلة:</h2>
 
-
             <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 mt-3">
-            {
-              relatedBooks.map((book)=>(
-                 <Book book={book}  key={book.id} />
-              ))    
-            }
-
+              {relatedBooks.map((book) => (
+                <Book book={book} key={book.id} />
+              ))}
             </div>
           </div>
         </div>

@@ -4,16 +4,9 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { QuickViewContext } from "../../context/QuickViewContext";
 import { useDispatch } from "react-redux";
-import {
-  addToCart,
-  toggleWishlist,
-} from "../../store/cartSlice";
+import { addToCart, toggleWishlist } from "../../store/cartSlice";
 import { IoIosSearch } from "react-icons/io";
-import {
-  FaHeart,
-  FaCartPlus,
-  FaShoppingCart,
-} from "react-icons/fa";
+import { FaHeart, FaCartPlus, FaShoppingCart } from "react-icons/fa";
 
 function Book({ book }) {
   const { openQuickView } = useContext(QuickViewContext);
@@ -21,8 +14,8 @@ function Book({ book }) {
 
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  const imgUrl = `http://localhost:1337${book.image?.url}`;
-  const BackimgUrl = `http://localhost:1337${book.Backimg?.url}`;
+  const imgUrl = `http://https://book-store-bkc3.onrender.com${book.image?.url}`;
+  const BackimgUrl = `http://https://book-store-bkc3.onrender.com${book.Backimg?.url}`;
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -36,15 +29,11 @@ function Book({ book }) {
     e.preventDefault();
     e.stopPropagation();
 
-    const cartOffcanvasElement = document.getElementById(
-      "cartOffcanvas"
-    );
+    const cartOffcanvasElement = document.getElementById("cartOffcanvas");
 
     if (cartOffcanvasElement && window.bootstrap) {
       const cartOffcanvas =
-        window.bootstrap.Offcanvas.getOrCreateInstance(
-          cartOffcanvasElement
-        );
+        window.bootstrap.Offcanvas.getOrCreateInstance(cartOffcanvasElement);
 
       cartOffcanvas.show();
     }
@@ -52,23 +41,12 @@ function Book({ book }) {
 
   return (
     <div className="book col mt-3">
-      <Link
-        className="bookLink"
-        to={`/book/${book.documentId}`}
-      >
+      <Link className="bookLink" to={`/book/${book.documentId}`}>
         <div className="bookIImg">
-          <img
-            className="bookImg"
-            src={imgUrl}
-            alt="bookImg"
-          />
+          <img className="bookImg" src={imgUrl} alt="bookImg" />
 
           <div className="bookimg2">
-            <img
-              className="bookImg"
-              src={BackimgUrl}
-              alt="bookImg"
-            />
+            <img className="bookImg" src={BackimgUrl} alt="bookImg" />
           </div>
 
           <div className="book-icons">
@@ -116,49 +94,30 @@ function Book({ book }) {
 
         <div className="bookDetails">
           <div className="d-flex justify-content-between align-items-center mb-2">
-            <span className="bookCategory">
-              {book.categories?.[0]?.name}
-            </span>
+            <span className="bookCategory">{book.categories?.[0]?.name}</span>
 
             <div className="bookRating">
               ⭐ {book.rating}
-              <small>
-                ({book.review_count})
-              </small>
+              <small>({book.review_count})</small>
             </div>
           </div>
 
-          <h5 className="bookTitle">
-            {book.name}
-          </h5>
+          <h5 className="bookTitle">{book.name}</h5>
 
-          <p className="bookAuthor">
-            ✍️ {book.author?.name}
-          </p>
+          <p className="bookAuthor">✍️ {book.author?.name}</p>
 
-          <p className="bookDescription">
-            {book.shoer_description}
-          </p>
+          <p className="bookDescription">{book.shoer_description}</p>
 
           <div className="d-flex justify-content-between align-items-center mt-3">
             <span className="bookPriceTitle">
               السعر:
-              <span className="bookPrice">
-                {" "}
-                {book.price} ريال
-              </span>
+              <span className="bookPrice"> {book.price} ريال</span>
             </span>
 
             <span
-              className={
-                book.available
-                  ? "bookAvailable"
-                  : "bookUnavailable"
-              }
+              className={book.available ? "bookAvailable" : "bookUnavailable"}
             >
-              {book.available
-                ? "متوفر"
-                : "غير متوفر"}
+              {book.available ? "متوفر" : "غير متوفر"}
             </span>
           </div>
 

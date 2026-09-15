@@ -318,7 +318,7 @@ function Navbar() {
             <>
               <div className="wishlist-items">
                 {wishlistItems.map((item) => {
-                  const itemImage = `http://localhost:1337${item.image?.url}`;
+                  const itemImage = `http://https://book-store-bkc3.onrender.com${item.image?.url}`;
 
                   return (
                     <div className="wishlist-item" key={item.id}>
@@ -390,7 +390,7 @@ function Navbar() {
             <>
               <div className="cart-items">
                 {cartItems.map((item) => {
-                  const itemImage = `http://localhost:1337${item.image?.url}`;
+                  const itemImage = `http://https://book-store-bkc3.onrender.com${item.image?.url}`;
 
                   return (
                     <div className="cart-item" key={item.id}>
