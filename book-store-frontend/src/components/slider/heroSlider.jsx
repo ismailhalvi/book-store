@@ -60,7 +60,7 @@ function heroSlider() {
               <div
                 className="hero-slide"
                 style={{
-                  backgroundImage: `url(http://https://book-store-bkc3.onrender.com${bgImg})`,
+                  backgroundImage: `url(https://book-store-bkc3.onrender.com${bgImg})`,
                 }}
               >
                 <div className="container">
@@ -109,7 +109,7 @@ function heroSlider() {
                     <div className="col-lg-6 hero-img text-center">
                       <img
                         width="100%"
-                        src={`http://https://book-store-bkc3.onrender.com${slide.heroImg?.url}`}
+                        src={`https://book-store-bkc3.onrender.com${slide.heroImg?.url}`}
                         alt={slide.title}
                       />
                     </div>

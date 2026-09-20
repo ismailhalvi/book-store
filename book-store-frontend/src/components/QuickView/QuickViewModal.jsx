@@ -48,7 +48,7 @@ function QuickViewModal() {
             <div className="modal-body quick-modal-body">
               <div className="quick-image">
                 <img
-                  src={`http://https://book-store-bkc3.onrender.com${selectedBook?.image?.url}`}
+                  src={`https://book-store-bkc3.onrender.com${selectedBook?.image?.url}`}
                   alt={selectedBook.name}
                 />
               </div>

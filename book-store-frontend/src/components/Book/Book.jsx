@@ -14,8 +14,8 @@ function Book({ book }) {
 
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  const imgUrl = `http://https://book-store-bkc3.onrender.com${book.image?.url}`;
-  const BackimgUrl = `http://https://book-store-bkc3.onrender.com${book.Backimg?.url}`;
+  const imgUrl = `https://book-store-bkc3.onrender.com${book.image?.url}`;
+  const BackimgUrl = `https://book-store-bkc3.onrender.com${book.Backimg?.url}`;
 
   const handleAddToCart = (e) => {
     e.preventDefault();

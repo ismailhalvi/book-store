@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function Author({ author }) {
-  const AuthorImg = `http://https://book-store-bkc3.onrender.com${author.image?.url}`;
+  const AuthorImg = `https://book-store-bkc3.onrender.com${author.image?.url}`;
   return (
     <div className="author col  mb-3">
       <Link to={`/author/${author.documentId}`}>

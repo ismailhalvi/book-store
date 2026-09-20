@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Category({ category }) {
   const imgUrl = category.image
-    ? `http://https://book-store-bkc3.onrender.com${category.image.url}`
+    ? `https://book-store-bkc3.onrender.com${category.image.url}`
     : "";
 
   return (
