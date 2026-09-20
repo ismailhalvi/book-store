@@ -1,5 +1,7 @@
 import Navbar from "./components/global/Navbar/Navbar";
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 import CategoriesPage from "./assets/pages/CategoriesPage/CategoriesPage";
 import Home from "./assets/pages/HomePage/Home";
@@ -22,8 +24,25 @@ import ScrollTop from "./components/global/ScrollTop/ScrollTop";
 import Cart from "./assets/pages/Cart/Cart";
 
 function App() {
+  const booksLoading = useSelector((state) => state.books.isLoading);
+  const categoriesLoading = useSelector(
+    (state) => state.categories.isLoading
+  );
+  const authorsLoading = useSelector((state) => state.authors.isLoading);
+  const blogsLoading = useSelector((state) => state.blogs.isLoading);
+  const slidersLoading = useSelector((state) => state.sliders.isLoading);
+
+  const isLoading =
+    booksLoading ||
+    categoriesLoading ||
+    authorsLoading ||
+    blogsLoading ||
+    slidersLoading;
+
   return (
     <HashRouter>
+      {isLoading && <LoadingScreen />}
+
       <Navbar />
 
       <ScrollTop />
