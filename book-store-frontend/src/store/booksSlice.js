@@ -9,10 +9,16 @@ const initialState  = {
 }
 
 
-export const getBooks = createAsyncThunk("books-actions" , async({page = 1 , pageSize= 6}  ={ })=>{
-    const {data} = await api.get(`/books?pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate=*`);
-    return data
-} );
+export const getBooks = createAsyncThunk(
+  "books-actions",
+  async ({ page = 1, pageSize = 6 } = {}) => {
+    const { data } = await api.get(
+      `/books?pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate[0]=image&populate[1]=Backimg&populate[2]=categories&populate[3]=author`
+    );
+
+    return data;
+  }
+);
 
 const BooksSlice = createSlice({
     name : "BooksSlice  ",

@@ -8,7 +8,7 @@ const initialState  = {
 }
 
 export const getAllSliders = createAsyncThunk("sliders-actions"  , async()=> {
-        const {data} = await api.get("/sliders?populate=*")
+       const { data } = await api.get("/sliders?populate[0]=bgDark&populate[1]=heroImg");
         return data
 });
 

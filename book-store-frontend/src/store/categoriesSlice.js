@@ -8,7 +8,7 @@ const initialState  = {
 }
 
 export const getCategories = createAsyncThunk("categories-actions" , async()=>{
-    const {data} = await api.get("/categories?populate=*")
+   const {data} = await api.get("/categories?populate=image")
     return data
 } );
 
