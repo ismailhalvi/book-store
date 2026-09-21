@@ -10,7 +10,7 @@ const {data , isLoading , error} = useSelector((state) => state.authors)
 
 useEffect(() => {
   dispatch(getAllAuthors())
-} , [dispatch , data.length])
+} , [dispatch ])
 
 
 if (isLoading) {
