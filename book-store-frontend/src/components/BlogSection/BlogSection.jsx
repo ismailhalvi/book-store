@@ -13,7 +13,7 @@ function BlogSection() {
     dispatch(getAllBlogs())
    
 
-  } , [dispatch , data.length])
+  } , [dispatch])
 if (isLoading) {
   return <div>جاري التحميل ...</div>
 }
