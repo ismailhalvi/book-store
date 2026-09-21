@@ -8,7 +8,9 @@ const initialState = {
 };
 
 export const getAllBlogs = createAsyncThunk("blogs-actions" , async()=>{
-    const {data} = await api.get("/blogs?populate=*");
+   const {data} = await api.get(
+    "/blogs?populate[0]=image&populate[1]=category_blog&populate[2]=author"
+);
     return data
 } )
 
