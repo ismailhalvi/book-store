@@ -70,7 +70,11 @@ function BookDetails() {
           <div className="book-img col">
             <img
               className="img-book"
-              src={`https://book-store-bkc3.onrender.com${book.image.url}`}
+             src={
+  book.image?.url?.startsWith("http")
+    ? book.image.url
+    : `https://book-store-bkc3.onrender.com${book.image?.url}`
+}
               alt={book.name}
             />
             <div className="book-gallery d-flex gap-2 mt-3 ">
@@ -78,7 +82,11 @@ function BookDetails() {
                 <img
                   className="img-book-2"
                   key={image.id}
-                  src={`https://book-store-bkc3.onrender.com${image.url}`}
+                  src={
+  image.url?.startsWith("http")
+    ? image.url
+    : `https://book-store-bkc3.onrender.com${image.url}`
+}
                   alt={book.name}
                 />
               ))}

@@ -2,7 +2,9 @@ import React from "react";
 import "./BlogCardStyle.css";
 
 function BlogCard({ blog }) {
-  const BlogImg = `https://book-store-bkc3.onrender.com${blog.image?.url}`;
+  const BlogImg = blog.image?.url?.startsWith("http")
+  ? blog.image.url
+  : `https://book-store-bkc3.onrender.com${blog.image?.url}`;
 
   return (
     <div className="blog-card">

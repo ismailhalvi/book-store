@@ -46,7 +46,9 @@ function Cart() {
           <div className="col-lg-8">
             <div className="cart-page-items">
               {cartItems.map((item) => {
-                const itemImage = `https://book-store-bkc3.onrender.com${item.image?.url}`;
+                const itemImage = item.image?.url?.startsWith("http")
+  ? item.image.url
+  : `https://book-store-bkc3.onrender.com${item.image?.url}`;
 
                 return (
                   <div className="cart-page-item" key={item.id}>

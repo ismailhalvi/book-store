@@ -54,13 +54,15 @@ function heroSlider() {
         loop={false}
       >
         {data.map((slide) => {
-          const bgImg = slide.bgDark?.url;
+          const bgImg = slide.bgDark?.url?.startsWith("http")
+            ? slide.bgDark.url
+            : `https://book-store-bkc3.onrender.com${slide.bgDark?.url}`;
           return (
             <SwiperSlide>
               <div
                 className="hero-slide"
                 style={{
-                  backgroundImage: `url(https://book-store-bkc3.onrender.com${bgImg})`,
+                  backgroundImage: `url(${bgImg})`,
                 }}
               >
                 <div className="container">
@@ -109,7 +111,11 @@ function heroSlider() {
                     <div className="col-lg-6 hero-img text-center">
                       <img
                         width="100%"
-                        src={`https://book-store-bkc3.onrender.com${slide.heroImg?.url}`}
+                        src={
+                          slide.heroImg?.url?.startsWith("http")
+                            ? slide.heroImg.url
+                            : `https://book-store-bkc3.onrender.com${slide.heroImg?.url}`
+                        }
                         alt={slide.title}
                       />
                     </div>

@@ -35,7 +35,11 @@ function AuthorDetails() {
               {authorDetails.image?.url && (
                 <div className="author-details-img">
                   <img
-                    src={`https://book-store-bkc3.onrender.com${authorDetails.image.url}`}
+                    src={
+  authorDetails.image.url?.startsWith("http")
+    ? authorDetails.image.url
+    : `https://book-store-bkc3.onrender.com${authorDetails.image.url}`
+}
                     alt={authorDetails.name}
                   />
                 </div>
