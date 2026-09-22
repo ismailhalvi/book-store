@@ -13,10 +13,13 @@ function Book({ book }) {
   const dispatch = useDispatch();
 
   const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const imgUrl = book.image?.url?.startsWith("http")
+    ? book.image.url
+    : `https://book-store-bkc3.onrender.com${book.image?.url}`;
 
-  const imgUrl = `https://book-store-bkc3.onrender.com${book.image?.url}`;
-  const BackimgUrl = `https://book-store-bkc3.onrender.com${book.Backimg?.url}`;
-
+  const BackimgUrl = book.Backimg?.url?.startsWith("http")
+    ? book.Backimg.url
+    : `https://book-store-bkc3.onrender.com${book.Backimg?.url}`;
   const handleAddToCart = (e) => {
     e.preventDefault();
     e.stopPropagation();
