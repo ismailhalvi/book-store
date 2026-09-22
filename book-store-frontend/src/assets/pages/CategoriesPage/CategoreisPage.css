@@ -1,14 +1,24 @@
+/* =========================
+   Categories Page
+========================= */
+
 .bunner {
     min-height: 190px;
+    padding: 35px 20px;
+    margin-bottom: 45px;
+
     background:
         radial-gradient(circle at 15% 50%, rgba(182, 134, 68, 0.16), transparent 30%),
         radial-gradient(circle at 85% 50%, rgba(182, 134, 68, 0.10), transparent 30%),
         linear-gradient(135deg, #10151a, #1c2329);
+
     border-bottom: 1px solid rgba(182, 134, 68, 0.55);
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+
     position: relative;
     overflow: hidden;
 }
@@ -18,8 +28,10 @@
     position: absolute;
     width: 260px;
     height: 260px;
+
     border: 1px solid rgba(182, 134, 68, 0.12);
     border-radius: 50%;
+
     right: -100px;
     top: -100px;
 }
@@ -29,8 +41,10 @@
     position: absolute;
     width: 180px;
     height: 180px;
+
     border: 1px solid rgba(182, 134, 68, 0.10);
     border-radius: 50%;
+
     left: -70px;
     bottom: -90px;
 }
@@ -40,6 +54,7 @@
     font-size: 44px;
     font-weight: 800;
     margin: 0;
+
     position: relative;
     z-index: 1;
 }
@@ -47,12 +62,31 @@
 .bunner h1::after {
     content: "";
     display: block;
+
     width: 60px;
     height: 3px;
+
     background: #B68644;
     border-radius: 10px;
+
     margin: 14px auto 0;
+
     box-shadow: 0 0 12px rgba(182, 134, 68, 0.35);
+}
+
+
+/* =========================
+   Categories Grid
+========================= */
+
+.bunner + .container {
+    padding-top: 5px;
+    padding-bottom: 70px;
+}
+
+.bunner + .container .row {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -76,10 +110,15 @@
 
     .bunner {
         min-height: 150px;
+        margin-bottom: 30px;
+        padding: 25px 15px;
     }
 
     .bunner h1 {
         font-size: 32px;
     }
 
+    .bunner + .container {
+        padding-bottom: 50px;
+    }
 }

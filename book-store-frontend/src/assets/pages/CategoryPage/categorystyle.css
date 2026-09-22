@@ -1,6 +1,18 @@
+/* =========================
+   Category Books Page
+========================= */
+
 .category-page {
     padding-top: 45px;
-    padding-bottom: 70px;
+    padding-bottom: 80px;
+}
+
+
+/* Books Grid */
+
+.category-page .row {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -8,6 +20,9 @@
 
 .category-empty {
     min-height: 300px;
+
+    margin: 10px 0 30px;
+    padding: 45px 25px;
 
     display: flex;
     flex-direction: column;
@@ -20,6 +35,8 @@
     border-radius: 18px;
 
     background: var(--bs-body-bg);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
 }
 
 .category-empty h2 {
@@ -42,7 +59,16 @@
 
     .category-page {
         padding-top: 30px;
-        padding-bottom: 50px;
+        padding-bottom: 55px;
     }
 
+    .category-empty {
+        min-height: 260px;
+        margin: 5px 0 20px;
+        padding: 35px 20px;
+    }
+
+    .category-empty h2 {
+        font-size: 20px;
+    }
 }
